@@ -1,4 +1,4 @@
-% clc; close all; clearvars;
+clc; close all; clearvars;
 
 % close all serial com
 a = instrfind();
@@ -25,19 +25,14 @@ zlabel('z');
 h(1) = surface(xcone, ycone, znoce);
 
 combinedobject = hgtransform('parent',myaxes);
-xx = 0.1;
-yy = 0;
-rotation1 = makehgtform('xrotate', 90 * xx * (pi/180)); % ori: 90
-rotation2 = makehgtform('yrotate', 90 * yy * (pi/180)); % ori 90
-set(combinedobject, 'matrix', rotation1 * rotation2);
-
 set(h,'parent', combinedobject);
 drawnow;
 
 dt = zeros(2,1);
 tmp = clock;
 dt(1) = round(tmp(6));
-while 2 > 1 % dt(2) - dt(1) <= tData
+% while dt(2) - dt(1) <= tData
+while 2 > 1
     out = fscanf(s);
     %sprintf(out);
     %disp(out);
