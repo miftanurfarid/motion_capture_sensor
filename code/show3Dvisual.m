@@ -1,4 +1,4 @@
-clc,close all,clear all
+clc; close all; clearvars;
 
 s=serial('COM3','BAUD', 115200);  % Baud rate and COM port
 fopen(s);
@@ -12,9 +12,9 @@ xlabel('x');
 ylabel('y');
 zlabel('z');
 
-[xcylinder ycylinder zcylinder]=cylinder([0.2 0.2]);
-[xcone ycone znoce]=cylinder([0.1 0.0]);
-[xsphere ysphere zsphere]=sphere();
+[xcylinder, ycylinder, zcylinder]=cylinder([0.2 0.2]);
+[xcone, ycone, znoce]=cylinder([0.1 0.0]);
+[xsphere, ysphere, zsphere]=sphere();
 
 h(1)=surface(xcylinder, ycylinder, zcylinder);
 
