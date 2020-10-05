@@ -13,10 +13,10 @@ ylabel('y');
 zlabel('z');
 
 [xcylinder, ycylinder, zcylinder] = cylinder([0.2 0.2]);
-[xcone, ycone, znoce] = cylinder([0.1 0.0]);
+[xcone, ycone, znoce] = cylinder([0.2 0.1]);
 [xsphere, ysphere, zsphere] = sphere();
 
-h(1)=surface(xcylinder, ycylinder, zcylinder);
+h(1) = surface(xcone, ycone, znoce);
 
 combinedobject = hgtransform('parent',myaxes);
 set(h,'parent', combinedobject);
