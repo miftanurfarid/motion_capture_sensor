@@ -26,7 +26,7 @@ set(h,'parent', combinedobject);
 drawnow;
 
 % time set
-tt    = 1000; % in seconds
+tt    = 60; % in seconds
 dt    = zeros(1,2);
 tmp   = clock;
 dt(1) = tmp(6);
