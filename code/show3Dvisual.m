@@ -26,7 +26,7 @@ set(h,'parent', combinedobject);
 drawnow;
 
 % time set
-tt    = 3; % in seconds
+tt    = 1000; % in seconds
 dt    = zeros(1,2);
 tmp   = clock;
 dt(1) = tmp(6);
@@ -41,6 +41,9 @@ while (dt(2) - dt(1)) < tt
     %disp(out);
     if out(1)=='#'
         parsedData = strsplit(out(1:length(out)-2),{',','=','\n'});
+        data(idx,1) = str2double(parsedData(1,2));
+        data(idx,2) = str2double(parsedData(1,4));
+        data(idx,3) = str2double(parsedData(1,6));
         disp(parsedData);
 %         disp(180*str2double(parsedData(2)));
         rotation1 = makehgtform('xrotate', 90 * str2double(parsedData(2))*(pi/180));  % 2
